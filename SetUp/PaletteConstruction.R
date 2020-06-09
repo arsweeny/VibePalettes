@@ -59,7 +59,7 @@ DivVibes <- lapply(1:length(PalPaths), function(a) {
 }) 
 names(DivVibes) <- PalNames
 
-saveRDS(QualVibes, file="QualVibes.rds")
-saveRDS(SeqVibes, file="SeqVibes.rds")
-saveRDS(DivVibes, file="DivVibes.rds")
+saveRDS(QualVibes, file="Palettes/QualVibes.rds")
+saveRDS(SeqVibes, file="Palettes/SeqVibes.rds")
+saveRDS(DivVibes, file="Palettes/DivVibes.rds")
 

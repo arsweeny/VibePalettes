@@ -1,6 +1,6 @@
-QualVibes <- readRDS('QualVibes.rds')
-SeqVibes <- readRDS('SeqVibes.rds')
-DivVibes <- readRDS('DivVibes.rds')
+QualVibes <- readRDS('Palettes/QualVibes.rds')
+SeqVibes <- readRDS('Palettes/SeqVibes.rds')
+DivVibes <- readRDS('Palettes/DivVibes.rds')
 
 #' palette generator 
 #'
