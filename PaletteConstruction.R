@@ -36,14 +36,29 @@ QualVibesDark <- lapply(1:length(PalPathsDark), function(a) {
 }) 
 names(QualVibesDark) <- Darks 
 
-QualVibes <- c(QualVibesBright, QualVibesDark)
+QualVibes <-  c(QualVibesBright, QualVibesDark) %>% as.list() 
+QualVibes <- QualVibes[order(names(QualVibes))]
 
 SeqVibes <- lapply(1:length(PalPaths), function(a) { 
   set.seed(1)
-  pal<- image_pal(PalPaths[[a]], type="seq", k=4, n=8, seq_by="hsv", 
-                  brightness=c(0.20,0.9), saturation=c(0.2, 0.9), 
+  pal<- image_pal(PalPaths[[a]], type="seq", k=5, n=8, seq_by="hsv", 
+                  bw=c(0.1,0.9), 
+                  brightness=c(0.10,0.90), saturation=c(0.2, 0.9), 
                   plot=TRUE)
   return(pal) 
 }) 
 names(SeqVibes) <- PalNames
 
+DivVibes <- lapply(1:length(PalPaths), function(a) { 
+  set.seed(1)
+  pal<- image_pal(PalPaths[[a]], type="div", n=9, seq_by="hsv", 
+                  bw=c(0.1,0.9), 
+                  brightness=c(0.40,0.9), saturation=c(0.4, 0.9), 
+                  plot=TRUE)
+  return(pal) 
+}) 
+names(DivVibes) <- PalNames
+
+saveRDS(QualVibes, file="QualVibes.rds")
+saveRDS(SeqVibes, file="SeqVibes.rds")
+saveRDS(DivVibes, file="DivVibes.rds")
